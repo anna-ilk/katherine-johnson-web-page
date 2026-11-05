@@ -1,0 +1,147 @@
+/* --- GLOBAL STYLES --- */
+:root {
+    --bg-black: #050505;
+    --text-gray: #a0a0a0;
+    --accent-white: #ffffff;
+    --sun-gold: rgba(255, 180, 50, 0.12);
+    --highlight-gold: #ffb432;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    background-color: var(--bg-black);
+    color: var(--accent-white);
+    font-family: 'Inter', sans-serif;
+    letter-spacing: -0.02em;
+    overflow-x: hidden;
+    margin: 0;
+}
+
+/* --- STAR GAZE BACKGROUND --- */
+#stars {
+    width: 2px;
+    height: 2px;
+    background: transparent;
+    box-shadow: 10vw 20vh #fff, 35vw 15vh #fff, 55vw 45vh #fff, 85vw 10vh #fff, 
+                15vw 85vh #fff, 45vw 70vh #fff, 75vw 60vh #fff, 95vw 90vh #fff,
+                25vw 30vh #fff, 65vw 25vh #fff, 50vw 80vh #fff, 10vw 60vh #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+/* --- MOON ANIMATION --- */
+.spinning-planet {
+    width: 280px;
+    height: 280px;
+    object-fit: cover;
+    clip-path: circle(40% at center);
+    animation: moonRotate 45s linear infinite, moonFloat 6s ease-in-out infinite;
+}
+
+@keyframes moonRotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes moonFloat {
+    0%, 100% { margin-top: 0; }
+    50% { margin-top: -15px; }
+}
+
+/* --- TITLES STYLE (AS IN SCREENSHOT 612) --- */
+.section-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--accent-white); /* White color */
+}
+
+.subsection-title {
+    font-family: 'Playfair Display', serif; /* Serif font as in pic */
+    font-size: 1.6rem;
+    color: var(--soft-gold); /* White color as in pic */
+    margin-top: 2rem;
+    margin-bottom: 0.8rem;
+    font-weight: 700;
+}
+
+.description {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--text-gray);
+}
+
+/* --- HORIZONTAL TIMELINE (AS IN SCREENSHOT 613) --- */
+.biography-title {
+    border-top: 1px solid #1a1a1a;
+    padding-top: 2rem;
+    margin-top: 3rem !important;
+}
+
+.horizontal-timeline {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.h-timeline-item {
+    text-decoration: none;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.h-timeline-item:hover {
+    transform: translateY(-5px);
+}
+
+.t-year {
+    display: block;
+    font-weight: 700;
+    color: var(--highlight-gold);
+    font-size: 1rem;
+}
+
+.t-label {
+    display: block;
+    font-size: 0.7rem;
+    color: var(--text-gray);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 5px;
+}
+
+.t-connector {
+    flex-grow: 0;
+    width: 50px; /* Line width between points */
+    height: 1px;
+    background-color: #444;
+    margin: 0 15px;
+}
+
+/* --- OTHER STYLES --- */
+.hero-section { min-height: 70vh; padding-top: 100px; display: flex; align-items: center; background: radial-gradient(circle at 30% 50%, var(--sun-gold) 0%, rgba(255,150,0,0.05) 30%, transparent 60%), radial-gradient(circle at 70% 30%, #151515 0%, #050505 100%); }
+.hero-title { font-family: 'Playfair Display', serif; font-size: 4.5rem; }
+.hero-subtitle { font-size: 1.25rem; color: var(--text-gray); max-width: 500px; }
+.content-area { padding-top: 3rem; padding-bottom: 3rem; }
+.timeline-detail { padding: 40px 0; border-bottom: 1px solid #1a1a1a; }
+.timeline-detail h3 { color: var(--highlight-gold); font-family: 'Playfair Display', serif; }
+.award-card { border: 1px solid #222; border-radius: 4px; padding: 1.25rem 1.75rem; margin-bottom: 1.25rem; background: rgba(255,255,255,0.01); }
+.award-year { font-size: 0.75rem; color: var(--text-gray); text-transform: uppercase; letter-spacing: 2px; }
+.award-title { font-size: 1.05rem; color: var(--accent-white); margin-bottom: 0.4rem; }
+.award-desc { font-size: 0.9rem; color: var(--text-gray); }
+footer { border-top: 1px solid #111; }
+.footer-text { font-size: 0.7rem; color: #444; text-transform: uppercase; }
+
+@media (max-width: 768px) {
+    .horizontal-timeline { overflow-x: auto; padding-bottom: 10px; }
+    .t-connector { width: 30px; }
+}

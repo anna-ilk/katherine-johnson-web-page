@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katherine G. Johnson | Women in STEM</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Ρεαλιστικό Space Φόντο */
+        body {
+            background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+            color: white;
+            overflow-x: hidden;
+            margin: 0;
+            min-height: 100vh;
+        }
+
+        /* Σύστημα Αστεριών σε Επίπεδα */
+        #star-layer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .stars-small {
+            width: 1px;
+            height: 1px;
+            background: transparent;
+            box-shadow: 442px 186px #FFF, 154px 343px #FFF, 112px 12px #FFF, 1002px 554px #FFF, 1422px 23px #FFF, 876px 900px #FFF, 321px 654px #FFF, 554px 231px #FFF, 10px 450px #FFF, 1200px 800px #FFF, 765px 321px #FFF, 1500px 600px #FFF, 230px 10px #FFF, 980px 430px #FFF;
+            animation: stars-blink 4s infinite ease-in-out;
+        }
+
+        .stars-medium {
+            width: 2px;
+            height: 2px;
+            background: transparent;
+            box-shadow: 100px 400px #FFF, 600px 200px #FFF, 1400px 700px #FFF, 300px 900px #FFF, 800px 50px #FFF, 1100px 400px #FFF, 50px 700px #FFF;
+            animation: stars-blink 6s infinite ease-in-out 1s;
+        }
+
+        .stars-large {
+            width: 3px;
+            height: 3px;
+            background: white;
+            border-radius: 50%;
+            position: absolute;
+            box-shadow: 0 0 10px #FFF, 0 0 20px rgba(100, 255, 218, 0.4);
+            animation: stars-blink 3s infinite ease-in-out 0.5s;
+        }
+
+        @keyframes stars-blink {
+            0%, 100% { opacity: 0.4; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.1); }
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: radial-gradient(circle at 15% 40%, rgba(41, 67, 115, 0.3) 0%, transparent 60%);
+            padding: 160px 0 100px 0;
+        }
+
+        /* Επιβολή μίας σειράς στο subtitle */
+        .hero-subtitle {
+            color: #64ffda;
+            font-weight: 400;
+            letter-spacing: 1px;
+            white-space: nowrap; /* Αυτό το κρατάει σε μία σειρά */
+        }
+
+        figcaption {
+            font-size: 0.85rem;
+            margin-top: 10px;
+            color: #aaa;
+            font-style: italic;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        /* Ενότητες χωρίς πλαίσιο */
+        .no-box {
+            background: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
+            padding: 0 !important;
+        }
+
+        .challenge-style {
+            background: rgba(255, 77, 77, 0.03) !important;
+            border: none !important;
+            border-left: 3px solid #ff4d4d !important;
+            border-radius: 0 !important;
+            padding: 25px !important;
+            box-shadow: none !important;
+        }
+
+        .impact-style {
+            background: rgba(100, 255, 218, 0.03) !important;
+            border: none !important;
+            border-left: 3px solid #64ffda !important;
+            border-radius: 0 !important;
+            padding: 25px !important;
+            box-shadow: none !important;
+        }
+
+        .content-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div id="star-layer">
+        <div class="stars-small"></div>
+        <div class="stars-medium"></div>
+        <div class="stars-large" style="top: 15%; left: 80%;"></div>
+        <div class="stars-large" style="top: 60%; left: 10%;"></div>
+        <div class="stars-large" style="top: 85%; left: 70%;"></div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-light" href="#" style="letter-spacing:4px;font-size:0.9rem;">WOMEN IN STEM</a>
+        </div>
+    </nav>
+
+    <header class="hero-section text-white d-flex align-items-center">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <h1 class="display-1 hero-title" style="text-shadow: 0 0 30px rgba(100, 255, 218, 0.25);">Katherine G. Johnson</h1>
+                    <p class="hero-subtitle">The woman who mastered the geometry of space</p>
+                </div>
+                <div class="col-lg-5 text-center">
+                    <div class="planet-container">
+                        <figure>
+                            <img src="moon.jpeg" class="spinning-planet" alt="Rotating Moon" style="filter: drop-shadow(0 0 25px rgba(255,255,255,0.15));">
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container content-area">
+        <div class="row g-5">
+            <div class="col-md-5">
+                <div class="image-wrapper">
+                    <figure>
+                        <img src="kat_johnson2.png" class="img-fluid main-img rounded shadow-lg" alt="Katherine Johnson Portrait">
+                        <figcaption>Katherine G. Johnson at her desk at NASA.</figcaption>
+                    </figure>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <div class="content-card">
+                    <h2 class="section-heading">Biography</h2>
+                    <div class="quick-facts mb-4">
+                        <p class="fact-item"><strong>Born:</strong> Aug. 26, 1918 (White Sulphur Springs, WV)</p>
+                        <p class="fact-item"><strong>Died:</strong> Feb. 24, 2020</p>
+                        <p class="fact-item"><strong>Education:</strong> B.S. Mathematics & French, PhD in Mathematics</p>
+                    </div>
+
+                    <h3 class="subsection-title">Childhood & Early Talent</h3>
+                    <p class="description">
+                        Katherine was a child prodigy who showed an exceptional talent for mathematics from a very young age, famously counting everything around her. Because her hometown did not offer schooling for Black students beyond the 8th grade, her family moved specifically to ensure she could continue her education.
+                    </p>
+
+                    <h3 class="subsection-title">Education & Academic Mentorship</h3>
+                    <p class="description">
+                        At age 18, she received a B.S. degree in Mathematics and French from West Virginia State University. There, Professor Claytor personally supported her development in advanced mathematics. Notably, she became the third African American to earn a PhD in Mathematics.
+                    </p>
+
+                    <h3 class="subsection-title">Early Career</h3>
+                    <p class="description">
+                        Initially, she worked as a teacher in elementary and high schools—one of the few career options available to Black women at the time. She took breaks to raise her children and returned to teaching before joining NACA in 1953.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-12">
+                <section class="text-center mb-5">
+                    <div class="no-box mx-auto" style="max-width: 1000px;">
+                        <h3 class="subsection-title">Entry into NASA (NACA)</h3>
+                        <br>
+                        <p class="description">
+                            In 1953, she joined the National Advisory Committee for Aeronautics (NACA) at the Langley Laboratory. She started in the all-Black West Area Computing section as a <strong>"human computer"</strong>, solving complex calculations by hand. 
+                        </p>
+                        <p class="description">
+                            She stood out by asking questions and joining meetings that women were not expected to attend. In 1960, she became the first woman in her division to receive credit as an author for a research report, laying the theoretical base for human space flight.
+                        </p>
+                        
+                        <br><br>
+                        
+                        <h2 class="section-heading biography-title text-start">Space Race Milestones</h2>
+                        <div class="horizontal-timeline d-flex justify-content-start align-items-center">
+                            <a href="#year-1961" class="h-timeline-item">
+                                <span class="t-year">1961</span>
+                                <span class="t-label">Freedom 7</span>
+                            </a>
+                            <div class="t-connector"></div>
+                            <a href="#year-1962" class="h-timeline-item">
+                                <span class="t-year">1962</span>
+                                <span class="t-label">Mercury Atlas 6</span>
+                            </a>
+                            <div class="t-connector"></div>
+                            <a href="#year-1969" class="h-timeline-item">
+                                <span class="t-year">1969</span>
+                                <span class="t-label">Apollo 11</span>
+                            </a>
+                            <div class="t-connector"></div>
+                            <a href="#year-1970" class="h-timeline-item">
+                                <span class="t-year">1970</span>
+                                <span class="t-label">Apollo 13</span>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <section class="mt-5">
+            <div id="year-1961" class="timeline-detail">
+                <h3>1961: Freedom 7</h3>
+                <p class="description">
+                    Katherine Johnson provided the trajectory analysis for Alan Shepard's May 1961 mission, Freedom 7, which marked America's first human spaceflight.
+                </p>
+            </div>
+
+            <div id="year-1962" class="timeline-detail">
+                <h3>1962: Mercury Atlas 6</h3>
+                <p class="description">
+                    John Glenn famously requested Katherine to verify the electronic computer's orbital calculations by hand, stating: "If she says it's good, I'm ready to take off".
+                </p>
+            </div>
+
+            <div id="year-1969" class="timeline-detail">
+                <h3>1969: Apollo 11</h3>
+                <p class="description">
+                    Johnson calculated the trajectory for the 1969 Moon landing, focusing on syncing the Lunar Module with the lunar-orbiting Command and Service Module.
+                </p>
+            </div>
+
+            <div id="year-1970" class="timeline-detail">
+                <h3>1970: Apollo 13</h3>
+                <p class="description">
+                    When the mission failed, her backup procedures and emergency trajectory calculations were essential in helping the spacecraft return safely to Earth.
+                </p>
+            </div>
+        </section>
+
+        <section class="mt-5">
+            <h2 class="section-heading">Challenges as a Woman of Color</h2>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="award-card challenge-style h-100">
+                        <p class="award-year" style="color: #ff4d4d;">Discrimination</p>
+                        <p class="award-title">Racism & Sexism at NASA</p>
+                        <p class="award-desc">
+                            Working in the 1950s, Katherine faced double discrimination. NASA (then NACA) followed Virginia's Jim Crow laws, meaning she worked in <strong>segregated offices</strong>, used separate restrooms, and ate in different cafeterias from her white colleagues.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="award-card challenge-style h-100">
+                        <p class="award-year" style="color: #ff4d4d;">Overcoming Barriers</p>
+                        <p class="award-title">Persistence & Excellence</p>
+                        <p class="award-desc">
+                            Katherine famously <strong>refused to use the segregated restrooms</strong>. By delivering perfect calculations and asking "why," she won the respect of engineers, proving that <strong>excellence is the most powerful tool against prejudice</strong>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mt-5 pt-5">
+            <h2 class="section-heading">Impact of Her Work</h2>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="award-card impact-style h-100">
+                        <p class="award-year" style="color: #64ffda;">Legacy in Flight</p>
+                        <p class="award-title">Influence on Space Exploration</p>
+                        <p class="award-desc">
+                            Katherine Johnson did not just calculate numbers; she <strong>ensured mission safety</strong>. Her critical role in early space missions defined the margin of error for NASA and proved human intellect was the ultimate backup.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="award-card impact-style h-100">
+                        <p class="award-year" style="color: #64ffda;">Breaking Boundaries</p>
+                        <p class="award-title">Role Model in STEM</p>
+                        <p class="award-desc">
+                            Today, she stands as a global <strong>inspiration for women and minorities in STEM</strong>. She showed that the universe's complex problems are best solved when we allow the best minds to lead, regardless of gender or race.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="awards-section pt-5 mt-5">
+            <h2 class="section-heading">Achievements & Recognition</h2>
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <div class="award-card">
+                        <p class="award-year">NASA Career Highlights</p>
+                        <p class="award-title">NASA Group Achievement Awards</p>
+                        <p class="award-desc">Throughout her career, she received the <strong>NASA Lunar Orbiter Award</strong> and <strong>3 NASA Special Achievement Awards</strong>.</p>
+                    </div>
+                    <div class="award-card">
+                        <p class="award-year">2015</p>
+                        <p class="award-title">Presidential Medal of Freedom</p>
+                        <p class="award-desc">Awarded by President Barack Obama for her pioneering work in STEM and civil rights.</p>
+                    </div>
+                    <div class="award-card">
+                        <p class="award-year">2019</p>
+                        <p class="award-title">Congressional Gold Medal</p>
+                        <p class="award-desc">Highest expression of national appreciation for distinguished achievements.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center">
+                    <figure>
+                        <img src="medal.webp" class="img-fluid rounded shadow-lg" alt="Presidential Medal of Freedom Recognition" style="border: 1px solid rgba(255,255,255,0.1);">
+                        <figcaption>Katherine receiving the Medal of Freedom in 2015.</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section class="mt-5 pt-5">
+            <h2 class="section-heading">Personal Contribution & Reflection</h2>
+            <div class="content-card">
+                <p class="description">
+                    <strong>Reflection & Impact:</strong> Studying Johnson's life underscores a core principle of our course: that <strong>scientific progress is inseparable from social equity</strong>. Her ability to verify computer calculations was more than a technical feat; it was a symbolic victory for women in a field where their intellectual capacity was systematically doubted. When we exclude specific groups based on gender or race, we do not only commit a social injustice, but we also limit the collective potential of human innovation. Katherine's story teaches us that the barriers to scientific advancement are often social and cultural, not technical. By recognizing and dismantling these barriers, we can create a more inclusive and innovative scientific community that benefits everyone. Ultimately, true excellence in science is achieved only when the barriers to entry are removed for everyone. 
+                </p>
+            </div>
+        </section>
+
+        <section class="mt-5 mb-5 pt-5">
+            <h2 class="section-heading">Bibliography & References</h2>
+            <div class="content-card">
+                <ul style="color: #aaa; line-height: 2;">
+                    <li>Loff, S. (2020). <em>Katherine Johnson Biography</em>. NASA. Retrieved from <a href="https://www.nasa.gov/centers-and-facilities/langley/katherine-johnson-biography/" target="_blank" style="color: #64ffda;">nasa.gov/katherine-johnson-biography</a></li>
+                    <li>Wikipedia Contributors. (2024). <em>Katherine Johnson</em>. Wikipedia, The Free Encyclopedia. Retrieved from <a href="https://en.wikipedia.org/wiki/Katherine_Johnson" target="_blank" style="color: #64ffda;">en.wikipedia.org/wiki/Katherine_Johnson</a></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-5 text-center">
+        <p class="footer-text">Julia Maubach | Anna Ilkou</p>
+    </footer>
+
+</body>
+</html>
